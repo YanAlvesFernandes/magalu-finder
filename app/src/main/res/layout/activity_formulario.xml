@@ -1,0 +1,65 @@
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="225dp">
+
+        <ImageView
+            android:id="@+id/formulario_foto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/luizalabs"
+            android:background="#666666"/>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/txtCidade"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Cidade:" />
+
+    <EditText
+        android:id="@+id/txtPais"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/formulario_foto"
+        android:hint="País:" />
+
+    <!-- Bottom Bar -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCadastrarLocalizacao"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/blue"
+            android:text="Cadastrar" />
+
+        <Button
+            android:id="@+id/btnPegarLocalizaççao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue"
+            android:text="Localização atual"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
