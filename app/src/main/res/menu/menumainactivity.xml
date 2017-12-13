@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.alura.agenda.ListaAlunosActivity">
+
+    <item
+        android:id="@+id/spinnerMenuItem"
+        android:title="Cº"
+        app:actionViewClass="android.widget.Spinner"
+        android:background="#ff00"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/item_menu_mapa"
+        android:title="Visualizar no mapa"
+        android:icon="@drawable/maps"
+        app:showAsAction="always" />
+</menu>

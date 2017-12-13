@@ -12,25 +12,25 @@
             android:id="@+id/formulario_foto"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/luizalabs"
-            android:background="#666666"/>
+            android:src="@drawable/magazineluiza"
+            android:background="#444444"/>
 
     </RelativeLayout>
 
     <EditText
-        android:id="@+id/txtCidade"
+        android:id="@+id/txtDesc_filial"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Cidade:" />
+        android:hint="Descrição da filial:" />
 
     <EditText
-        android:id="@+id/txtPais"
+        android:id="@+id/txtCep"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/formulario_foto"
-        android:hint="País:" />
+        android:layout_below="@+id/txtDesc_filial"
+        android:hint="CEP:" />
 
     <!-- Bottom Bar -->
     <LinearLayout
@@ -42,21 +42,21 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCadastrarLocalizacao"
+            android:id="@+id/btnCadastrarFilial"
             style="@style/Widget.AppCompat.Button.Borderless.Colored"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/blue"
-            android:text="Cadastrar" />
+            android:text="Cadastrar Filial" />
 
         <Button
-            android:id="@+id/btnPegarLocalizaççao"
+            android:id="@+id/btnIrFiliais"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/blue"
-            android:text="Localização atual"
+            android:text="Visualizar filiais"
             android:textColor="@android:color/white" />
 
     </LinearLayout>
