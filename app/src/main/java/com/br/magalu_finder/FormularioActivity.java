@@ -10,7 +10,6 @@ import android.widget.Toast;
 import com.br.magalu_finder.DAO.FilialDAO;
 import com.br.magalu_finder.Model.Filial;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 
 public class FormularioActivity extends AppCompatActivity {
 
@@ -42,8 +41,8 @@ public class FormularioActivity extends AppCompatActivity {
                 dao.close();
                 finish();
 
-                Intent voltarLocalizacao = new Intent(FormularioActivity.this, MainActivity.class);
-                startActivity(voltarLocalizacao);
+                Intent voltarFiliais = new Intent(FormularioActivity.this, MainActivity.class);
+                startActivity(voltarFiliais);
 
 
             }
@@ -55,14 +54,8 @@ public class FormularioActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                googleApiClient = new GoogleApiClient.Builder(formularioActivity)
-                        .addConnectionCallbacks((GoogleApiClient.ConnectionCallbacks) formularioActivity)
-                        .addOnConnectionFailedListener((GoogleApiClient.OnConnectionFailedListener) formularioActivity)
-                        .addApi(LocationServices.API)
-                        .build();
-
-                //Tentando conexão com o Google API. Se a tentativa for bem sucessidade, o método onConnected() será chamado, senão, o método onConnectionFailed() será chamado.
-                googleApiClient.connect();
+                Intent voltarFiliais = new Intent(FormularioActivity.this, MainActivity.class);
+                startActivity(voltarFiliais);
             }
         });
     }

@@ -12,6 +12,8 @@ public class FilialHelper {
 
     private final EditText desc_filial;
     private final EditText cep;
+    private final EditText cidade;
+    private final EditText bairro;
 
     private Filial filial;
 
@@ -19,6 +21,8 @@ public class FilialHelper {
 
         desc_filial = (EditText) activity.findViewById(R.id.txtDesc_filial);
         cep = (EditText) activity.findViewById(R.id.txtCep);
+        cidade = (EditText) activity.findViewById(R.id.txtCidade);
+        bairro = (EditText) activity.findViewById(R.id.txtBairro);
 
 
         filial = new Filial();
@@ -29,6 +33,8 @@ public class FilialHelper {
 
         filial.setDesc_filial(desc_filial.getText().toString());
         filial.setCep(cep.getText().toString());
+        filial.setCidade(cidade.getText().toString());
+        filial.setBairro(bairro.getText().toString());
 
 
         return filial;

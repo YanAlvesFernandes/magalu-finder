@@ -50,7 +50,7 @@ public class MapaFragment extends SupportMapFragment implements OnMapReadyCallba
         FilialDAO filialDAO = new FilialDAO(getContext());
         for (Filial filial : filialDAO.buscaFilial()){
 
-            LatLng coordenada = getCoordenada(filial.getDesc_filial() + filial.getCep());
+            LatLng coordenada = getCoordenada(filial.getCidade() + filial.getBairro());
             if (coordenada != null){
                 //Variavel para criação dos marcadores
                 MarkerOptions marcador = new MarkerOptions();

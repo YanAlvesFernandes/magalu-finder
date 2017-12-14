@@ -8,7 +8,7 @@ package com.br.magalu_finder.Model;
 public class Filial {
 
     private Long id;
-    private String desc_filial, cep;
+    private String desc_filial, cep, cidade, bairro;
 
     public Long getId() {
         return id;
@@ -32,5 +32,21 @@ public class Filial {
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 }
