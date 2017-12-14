@@ -1,9 +1,9 @@
 package com.br.magalu_finder;
 
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class MapsActivity extends AppCompatActivity {
 
