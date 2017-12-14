@@ -13,7 +13,6 @@ public class FilialHelper {
     private final EditText desc_filial;
     private final EditText cep;
 
-
     private Filial filial;
 
     public FilialHelper(FormularioActivity activity) {
@@ -28,7 +27,7 @@ public class FilialHelper {
 
     public Filial pegaFilial() {
 
-        filial.setDesc_filial(filial.getDesc_filial().toString());
+        filial.setDesc_filial(desc_filial.getText().toString());
         filial.setCep(cep.getText().toString());
 
 
