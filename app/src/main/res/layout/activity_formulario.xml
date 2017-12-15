@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/magazineluiza"
-            android:background="#444444"/>
+            android:background="#999999"/>
 
     </RelativeLayout>
 
@@ -38,7 +38,6 @@
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtDesc_filial"
         android:hint="Cidade:" />
 
     <EditText
@@ -47,7 +46,6 @@
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtDesc_filial"
         android:hint="Bairro:" />
 
     <!-- Bottom Bar -->

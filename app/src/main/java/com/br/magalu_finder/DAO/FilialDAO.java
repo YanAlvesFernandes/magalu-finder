@@ -34,7 +34,7 @@ public class FilialDAO extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("DROP TABLE IF EXISTS Localizacao");
+        db.execSQL("DROP TABLE IF EXISTS Filial");
         onCreate(db);
 
     }
@@ -43,7 +43,7 @@ public class FilialDAO extends SQLiteOpenHelper {
     public void insere(Filial filial) {
 
         SQLiteDatabase db = getWritableDatabase();
-        ContentValues dados = pegaDadosLocalizacao(filial);
+        ContentValues dados = pegaDadosFilial(filial);
 
 
         db.insert("Filial", null, dados);
@@ -52,13 +52,13 @@ public class FilialDAO extends SQLiteOpenHelper {
 
     //Criação do ContentValues que serão inseridos no banco
     @NonNull
-    private ContentValues pegaDadosLocalizacao(Filial filial) {
+    private ContentValues pegaDadosFilial(Filial filial) {
 
         ContentValues dados = new ContentValues();
         dados.put("desc_filial", filial.getDesc_filial().toUpperCase());
         dados.put("cep", filial.getCep().toUpperCase());
-        dados.put("cidade", filial.getCep().toUpperCase());
-        dados.put("bairro", filial.getCep().toUpperCase());
+        dados.put("cidade", filial.getCidade().toUpperCase());
+        dados.put("bairro", filial.getBairro().toUpperCase());
         return dados;
     }
 
@@ -86,10 +86,10 @@ public class FilialDAO extends SQLiteOpenHelper {
     }
 
     //Função responsável por deletar ítens do banco após busca po ID
-    public void deleta(Filial localizacao) {
+    public void deleta(Filial filial) {
 
         SQLiteDatabase db  = getWritableDatabase();
-        String[] params = {localizacao.getId().toString()};
+        String[] params = {filial.getId().toString()};
         db.delete("Filial", "id = ?", params);
 
     }

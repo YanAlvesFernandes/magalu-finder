@@ -18,12 +18,10 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by Yan Alves on 20/05/2017.
- * Classe responsável por criar o fragment para utilização do maps
+ * Created by Yan Alves on 14/12/2017.
  */
 
-public class MapaFragment extends SupportMapFragment implements OnMapReadyCallback {
-
+public class MapsFragment extends SupportMapFragment implements OnMapReadyCallback {
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -57,8 +55,8 @@ public class MapaFragment extends SupportMapFragment implements OnMapReadyCallba
                 marcador.position(coordenada);
 
                 //Informação que conterá o marcador
-                marcador.title(filial.getDesc_filial() + "Coordenadas: " + coordenada.toString());
-                marcador.snippet((filial.getDesc_filial()));
+                marcador.title(filial.getCidade() + "Coordenadas: " + coordenada.toString());
+                marcador.snippet((filial.getBairro()));
 
                 //Adicionando o marcador ao mapa
                 googleMap.addMarker(marcador);
@@ -87,4 +85,6 @@ public class MapaFragment extends SupportMapFragment implements OnMapReadyCallba
         }
         return null;
     }
+
+
 }
