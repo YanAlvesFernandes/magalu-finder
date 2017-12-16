@@ -49,5 +49,4 @@ public class ProdutoHelper {
             campoFoto.setTag(caminhoFoto);
         }
     }
-
 }

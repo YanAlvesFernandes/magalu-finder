@@ -58,5 +58,6 @@ public class FormularioActivity extends AppCompatActivity {
                 startActivity(voltarFiliais);
             }
         });
+
     }
 }
