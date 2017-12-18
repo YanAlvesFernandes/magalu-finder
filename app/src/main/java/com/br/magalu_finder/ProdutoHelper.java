@@ -32,7 +32,7 @@ public class ProdutoHelper {
     public Produto pegaProduto() {
 
         produto.setDesc_produto(desc_produto.getText().toString());
-        produto.setValor_produto(Double.valueOf(String.valueOf(valor_produto.getText())));
+        produto.setValor_produto(Double.valueOf(valor_produto.getText().toString()));
         produto.setCaminhoFoto((String) campoFoto.getTag());
         return produto;
     }

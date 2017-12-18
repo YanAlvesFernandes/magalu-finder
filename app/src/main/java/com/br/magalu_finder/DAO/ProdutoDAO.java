@@ -20,13 +20,15 @@ public class ProdutoDAO extends SQLiteOpenHelper {
 
     //Nome do banco e versão que deve ser incrementada após alterações do BD
     public ProdutoDAO(Context context) {
-        super(context, "magalu_finder", null, 1);
+        super(context, "magalu_finder", null, 2);
     }
 
-    //Criação da tabela Produtos
+    //Criação da tabela Produto
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE Produto (id INTEGER PRIMARY KEY, desc_produto TEXT NOT NULL, valor_produto REAL NOT NULL, caminhoFoto TEXT);";
+
+        //db = openOrCreateDatabase("magalu_finder", null);
+        String sql = "CREATE TABLE IF NOT EXISTS Produto (id INTEGER PRIMARY KEY, desc_produto TEXT NOT NULL, valor_produto REAL NOT NULL, caminhoFoto TEXT NOT NULL);";
         db.execSQL(sql);
     }
 
@@ -61,7 +63,6 @@ public class ProdutoDAO extends SQLiteOpenHelper {
         return dados;
     }
 
-
     //Busca no banco
     public List<Produto> buscaProduto() {
         String sql = "SELECT * FROM Produto";
@@ -82,6 +83,7 @@ public class ProdutoDAO extends SQLiteOpenHelper {
 
         return produtos;
     }
+
 
     //Função responsável por deletar ítens do banco após busca po ID
     public void deleta(Produto produto) {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,11 +27,14 @@ public class FormularioProdutos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_produtos);
 
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+
         //Inicializção do helper
         helper = new ProdutoHelper(this);
 
-        Button botaoFoto = (Button)findViewById(R.id.btnFotoProduto);
-        botaoFoto.setOnClickListener(new View.OnClickListener() {
+        Button btnFotoProduto = (Button)findViewById(R.id.btnFotoProduto);
+        btnFotoProduto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intentCamera =  new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -41,20 +45,21 @@ public class FormularioProdutos extends AppCompatActivity {
             }
         });
 
-        //Botão reponsável para ir a listagem de filiais cadastradas
-        Button btnIrFiliais = (Button) findViewById(R.id.btnIrFiliais);
-        btnIrFiliais.setOnClickListener(new View.OnClickListener() {
+        //Botão reponsável para ir a listagem de produtos cadastradas
+        Button btnIrProdutos = (Button) findViewById(R.id.btnIrProdutos);
+        btnIrProdutos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent voltarFiliais = new Intent(FormularioProdutos.this, MainActivity.class);
-                startActivity(voltarFiliais);
+                Intent listarProdutos = new Intent(FormularioProdutos.this, ListaProdutos.class);
+                startActivity(listarProdutos);
             }
         });
 
+
         //Botão responsável por efetuar o cadastro
-        Button btnCadastrarFilial = (Button) findViewById(R.id.btnCadastrarFilial);
-        btnCadastrarFilial.setOnClickListener(new View.OnClickListener() {
+        Button btnCadastrarProdutos = (Button) findViewById(R.id.btnCadastrarProdutos);
+        btnCadastrarProdutos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -69,8 +74,8 @@ public class FormularioProdutos extends AppCompatActivity {
                 dao.close();
                 finish();
 
-                Intent voltarFiliais = new Intent(FormularioProdutos.this, MainActivity.class);
-                startActivity(voltarFiliais);
+                Intent voltarProdutos = new Intent(FormularioProdutos.this, ListaProdutos.class);
+                startActivity(voltarProdutos);
 
 
             }

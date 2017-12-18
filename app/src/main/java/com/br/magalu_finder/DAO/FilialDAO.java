@@ -23,7 +23,7 @@ public class FilialDAO extends SQLiteOpenHelper {
         super(context, "magalu_finder", null, 2);
     }
 
-    //Criação da tabela Localizacao
+    //Criação da tabela Filial
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE Filial (id INTEGER PRIMARY KEY, desc_filial TEXT NOT NULL, cep TEXT NOT NULL, cidade TEXT NOT NULL, bairro TEXT NOT NULL);";
