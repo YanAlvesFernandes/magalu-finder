@@ -48,7 +48,7 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
         FilialDAO filialDAO = new FilialDAO(getContext());
         for (Filial filial : filialDAO.buscaFilial()){
 
-            LatLng coordenada = getCoordenada(filial.getCidade() + filial.getBairro());
+            LatLng coordenada = getCoordenada(filial.getCidade() + filial.getUf());
             if (coordenada != null){
                 //Variavel para criação dos marcadores
                 MarkerOptions marcador = new MarkerOptions();
@@ -56,7 +56,7 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
 
                 //Informação que conterá o marcador
                 marcador.title(filial.getCidade() + "Coordenadas: " + coordenada.toString());
-                marcador.snippet((filial.getBairro()));
+                marcador.snippet((filial.getUf()));
 
                 //Adicionando o marcador ao mapa
                 googleMap.addMarker(marcador);

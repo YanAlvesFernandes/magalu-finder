@@ -20,7 +20,7 @@ public class ProdutoDAO extends SQLiteOpenHelper {
 
     //Nome do banco e versão que deve ser incrementada após alterações do BD
     public ProdutoDAO(Context context) {
-        super(context, "magalu_finder", null, 2);
+        super(context, "magalu_finder", null, 3);
     }
 
     //Criação da tabela Produto

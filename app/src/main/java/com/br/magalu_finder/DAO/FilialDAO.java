@@ -20,13 +20,13 @@ public class FilialDAO extends SQLiteOpenHelper {
 
     //Nome do banco e versão que deve ser incrementada após alterações do BD
     public FilialDAO(Context context) {
-        super(context, "magalu_finder", null, 2);
+        super(context, "magalu_finder", null, 3);
     }
 
     //Criação da tabela Filial
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE Filial (id INTEGER PRIMARY KEY, desc_filial TEXT NOT NULL, cep TEXT NOT NULL, cidade TEXT NOT NULL, bairro TEXT NOT NULL);";
+        String sql = "CREATE TABLE Filial (id INTEGER PRIMARY KEY, desc_filial TEXT NOT NULL, cep TEXT NOT NULL, cidade TEXT NOT NULL, uf TEXT NOT NULL, bairro TEXT NOT NULL);";
         db.execSQL(sql);
     }
 
@@ -58,6 +58,7 @@ public class FilialDAO extends SQLiteOpenHelper {
         dados.put("desc_filial", filial.getDesc_filial().toUpperCase());
         dados.put("cep", filial.getCep().toUpperCase());
         dados.put("cidade", filial.getCidade().toUpperCase());
+        dados.put("uf", filial.getUf().toUpperCase());
         dados.put("bairro", filial.getBairro().toUpperCase());
         return dados;
     }
@@ -77,6 +78,7 @@ public class FilialDAO extends SQLiteOpenHelper {
             filial.setDesc_filial(c.getString(c.getColumnIndex("desc_filial")));
             filial.setCep(c.getString(c.getColumnIndex("cep")));
             filial.setCidade(c.getString(c.getColumnIndex("cidade")));
+            filial.setUf(c.getString(c.getColumnIndex("uf")));
             filial.setBairro(c.getString(c.getColumnIndex("bairro")));
             filiais.add(filial);
         }

@@ -64,8 +64,12 @@ public class FilialAdapter extends BaseAdapter {
 /*        TextView campoCEP = (TextView)view.findViewById(R.id.item_cep);
         campoCEP.setText(filial.getCep());*/
 
+
         TextView campoCidade = (TextView)view.findViewById(R.id.item_cidade);
         campoCidade.setText(filial.getCidade());
+
+        TextView campoUf = (TextView)view.findViewById(R.id.item_uf);
+        campoUf.setText(filial.getUf());
 
         TextView campoBairro = (TextView)view.findViewById(R.id.item_bairro);
         campoBairro.setText(filial.getBairro());
